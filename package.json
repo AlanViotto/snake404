@@ -1,0 +1,46 @@
+{
+  "name": "snake404",
+  "version": "1.0.0",
+  "description": "Tiny dependency-free Snake game for 404 pages and any web project.",
+  "keywords": [
+    "snake",
+    "404",
+    "game",
+    "javascript",
+    "canvas",
+    "error-page",
+    "vanilla-js"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Alan Viotto | Viotto & Co.",
+    "url": "https://viotto.digital"
+  },
+  "main": "dist/snake404.js",
+  "module": "dist/snake404.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/snake404.esm.js",
+      "require": "./dist/snake404.js"
+    },
+    "./dist/snake404.css": "./dist/snake404.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanViotto/snake404.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlanViotto/snake404/issues"
+  },
+  "homepage": "https://github.com/AlanViotto/snake404#readme"
+}
