@@ -1,6 +1,6 @@
 {
   "name": "snake404",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny dependency-free Snake game for 404 pages and any web project.",
   "keywords": [
     "snake",

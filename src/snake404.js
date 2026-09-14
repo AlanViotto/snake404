@@ -531,4 +531,4 @@ function autoInit() {
 }
 
 export { SnakeGame, DEFAULTS as defaults, init, autoInit };
-export default { version: "1.0.0", Game: SnakeGame, defaults: DEFAULTS, init, autoInit };
+export default { version: "1.0.1", Game: SnakeGame, defaults: DEFAULTS, init, autoInit };

@@ -1,5 +1,5 @@
 /*!
- * Snake404.js v1.0.0
+ * Snake404.js v1.0.1
  * MIT License
  */
 (function (global, factory) {
@@ -550,6 +550,6 @@ if (typeof document !== "undefined") {
   }
 }
 
-return { version: "1.0.0", Game: SnakeGame, defaults: DEFAULTS, init, autoInit };
+return { version: "1.0.1", Game: SnakeGame, defaults: DEFAULTS, init, autoInit };
 
 });
