@@ -6,33 +6,33 @@
 
 A lightweight, dependency-free Snake game made especially for **404 pages**, error screens and playful web experiences.
 
-**Created by [Alan Viotto](https://github.com/AlanViotto) | [Viotto & Co.](https://viotto.digital)**
+**Created by [Alan Viotto](http://linkedin.com/in/AlanViotto) | [Viotto & Co.](https://viotto.digital)**
 
-🎮 **[Jogue o demo](https://alanviotto.github.io/snake404/)**
+🎮 **[Play the demo](https://alanviotto.github.io/snake404/)**
 
-No demo, experimente as paletas Clássica, Oceano, Pôr do sol e Violeta, ou personalize as cores do fundo, grid, cobra, cabeça e comida. Alterne entre dark/light e formatos 1:1, 4:5, 9:16 e 16:9. Mudar o formato reinicia a partida; alterações de cor são aplicadas na hora.
+Try the Classic, Ocean, Sunset and Violet palettes in the demo, or customize the background, grid, snake, head and food colors. Switch between dark/light modes and 1:1, 4:5, 9:16 and 16:9 aspect ratios. Changing the aspect ratio restarts the game; color changes apply immediately.
 
-## Recursos
+## Features
 
-- Zero dependências
+- Zero dependencies
 - Canvas 2D
-- UMD para `<script>`
-- ES Modules para bundlers modernos
+- UMD for `<script>`
+- ES Modules for modern bundlers
 - CommonJS compatibility via UMD
 - TypeScript definitions
-- Responsivo
-- Teclado: setas e WASD
+- Responsive layout
+- Keyboard: arrow keys and WASD
 - Touch/swipe
-- Controles mobile
-- Recorde em `localStorage`
-- Pausa ao perder foco
-- Temas e textos customizáveis
-- Eventos/callbacks para analytics
-- API programática
-- Inicialização automática via `data-snake404`
+- Mobile controls
+- High score in `localStorage`
+- Pause on window blur
+- Customizable themes and labels
+- Events/callbacks for analytics
+- Programmatic API
+- Automatic initialization via `data-snake404`
 - MIT License
 
-## HTML puro
+## Plain HTML
 
 ```html
 <link rel="stylesheet" href="/snake404/snake404.css">
@@ -45,7 +45,7 @@ No demo, experimente as paletas Clássica, Oceano, Pôr do sol e Violeta, ou per
 </script>
 ```
 
-Ou sem JavaScript manual:
+Or without manual JavaScript initialization:
 
 ```html
 <div data-snake404></div>
@@ -165,7 +165,7 @@ onBeforeUnmount(() => {
 <div bind:this={el}></div>
 ```
 
-## ES Module direto no navegador
+## ES Modules in the browser
 
 ```html
 <link rel="stylesheet" href="/snake404/snake404.css">
@@ -177,7 +177,7 @@ onBeforeUnmount(() => {
 </script>
 ```
 
-## Personalização
+## Customization
 
 ```js
 Snake404.init("#snake404", {
@@ -192,15 +192,15 @@ Snake404.init("#snake404", {
   },
   labels: {
     title: "404",
-    subtitle: "Você se perdeu. A cobrinha também.",
-    start: "Começar",
-    restart: "Tentar de novo"
+    subtitle: "You are lost. So is the snake.",
+    start: "Start",
+    restart: "Try again"
   },
   onScore(score) {
-    console.log("Pontos:", score);
+    console.log("Score:", score);
   },
   onGameOver(score) {
-    console.log("Fim:", score);
+    console.log("Game over:", score);
   }
 });
 ```
@@ -227,26 +227,26 @@ game.togglePause();
 game.destroy();
 ```
 
-## Principais opções
+## Main options
 
-| Opção | Padrão | Descrição |
+| Option | Default | Description |
 |---|---:|---|
-| `cellSize` | `20` | Tamanho aproximado de cada célula |
-| `speed` | `110` | Intervalo inicial em ms |
-| `minSpeed` | `55` | Limite mínimo de velocidade |
-| `speedStep` | `2` | Quanto acelera por ponto |
-| `initialLength` | `4` | Comprimento inicial |
-| `pauseOnBlur` | `true` | Pausa ao trocar de janela |
-| `wrap` | `false` | Permite atravessar paredes |
-| `showScore` | `true` | Exibe pontuação |
-| `showControls` | `true` | Exibe controles mobile |
-| `autoStart` | `false` | Inicia automaticamente |
+| `cellSize` | `20` | Approximate size of each cell in pixels |
+| `speed` | `110` | Initial movement interval in milliseconds |
+| `minSpeed` | `55` | Minimum movement interval in milliseconds |
+| `speedStep` | `2` | Movement interval reduction per point in milliseconds |
+| `initialLength` | `4` | Initial snake length |
+| `pauseOnBlur` | `true` | Pause when switching windows |
+| `wrap` | `false` | Allow wrapping through walls |
+| `showScore` | `true` | Show the score |
+| `showControls` | `true` | Show mobile controls |
+| `autoStart` | `false` | Start automatically |
 
-## Compatibilidade
+## Compatibility
 
-O pacote é compatível com qualquer tecnologia que entregue HTML e JavaScript ao navegador. Exemplos:
+The package works with any technology that delivers HTML and JavaScript to the browser. Examples:
 
-- HTML estático
+- Static HTML
 - PHP
 - WordPress
 - Laravel
@@ -268,48 +268,10 @@ O pacote é compatível com qualquer tecnologia que entregue HTML e JavaScript a
 - Capacitor
 - WebViews
 
-## Publicação
+## Author
 
-O `package.json` já está preparado para publicação no npm.
+**[Alan Viotto](http://linkedin.com/in/AlanViotto) | [Viotto & Co.](https://viotto.digital)**
 
-Antes de publicar, altere:
+## License
 
-- confirme se o nome `snake404` está disponível no npm
-- revise a versão antes de cada release
-
-Depois:
-
-```bash
-npm login
-npm publish
-```
-
-## Repositório público
-
-Repositório oficial planejado:
-
-```text
-https://github.com/AlanViotto/snake404
-```
-
-Clone:
-
-```bash
-git clone https://github.com/AlanViotto/snake404.git
-cd snake404
-```
-
-A proposta do projeto é ser simples de incorporar, fácil de customizar e livre para uso em projetos pessoais e comerciais.
-
-Contribuições, issues e pull requests são bem-vindos.
-
-## Autor
-
-**Alan Viotto | Viotto & Co.**
-
-- Website: https://viotto.digital
-- GitHub: https://github.com/AlanViotto
-
-## Licença
-
-MIT. Uso comercial e pessoal permitido.
+MIT. Personal and commercial use permitted.

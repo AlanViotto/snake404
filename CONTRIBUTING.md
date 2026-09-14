@@ -1,27 +1,27 @@
 # Contributing to Snake404.js
 
-Contribuições são bem-vindas.
+Contributions are welcome.
 
-## Como contribuir
+## How to contribute
 
-1. Faça um fork do projeto.
-2. Crie uma branch para sua alteração.
-3. Faça commits claros e objetivos.
-4. Abra um Pull Request descrevendo a motivação e o impacto da mudança.
+1. Fork the project.
+2. Create a branch for your change.
+3. Write clear, concise commit messages.
+4. Open a pull request explaining the motivation and impact of your change.
 
-Para bugs, prefira abrir uma Issue com:
-- navegador e versão;
-- sistema operacional;
-- passos para reproduzir;
-- comportamento esperado;
-- comportamento observado.
+When reporting a bug, include:
 
-## Diretrizes
+- Browser name and version.
+- Operating system.
+- Steps to reproduce.
+- Expected behavior.
+- Actual behavior.
 
-- Evite dependências desnecessárias.
-- Preserve a compatibilidade com JavaScript executado diretamente no navegador.
-- Mantenha a biblioteca leve e apropriada para páginas 404.
-- Priorize acessibilidade, performance e compatibilidade mobile.
+## Guidelines
 
-Criado por Alan Viotto | Viotto & Co.
-https://viotto.digital
+- Avoid unnecessary dependencies.
+- Preserve compatibility with JavaScript running directly in the browser.
+- Keep the library lightweight and suitable for 404 pages.
+- Prioritize accessibility, performance and mobile compatibility.
+
+Created by [Alan Viotto](http://linkedin.com/in/AlanViotto) | [Viotto & Co.](https://viotto.digital).

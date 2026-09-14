@@ -1,10 +1,9 @@
 # Code of Conduct
 
-Este projeto busca manter um ambiente respeitoso, colaborativo e construtivo.
+This project aims to maintain a respectful, collaborative and constructive environment.
 
-Participantes devem tratar outras pessoas com respeito, evitar assédio, ataques pessoais e comportamentos discriminatórios.
+Participants must treat others with respect and avoid harassment, personal attacks and discriminatory behavior.
 
-Questões relacionadas à comunidade podem ser tratadas por meio das Issues do repositório.
+Community concerns can be raised through the repository's issues.
 
-Alan Viotto | Viotto & Co.
-https://viotto.digital
+[Alan Viotto](http://linkedin.com/in/AlanViotto) | [Viotto & Co.](https://viotto.digital).
