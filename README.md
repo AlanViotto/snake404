@@ -10,6 +10,8 @@ A lightweight, dependency-free Snake game made especially for **404 pages**, err
 
 🎮 **[Jogue o demo](https://alanviotto.github.io/snake404/)**
 
+No demo, experimente as paletas Clássica, Oceano, Pôr do sol e Violeta, ou personalize as cores do fundo, grid, cobra, cabeça e comida. Alterne entre dark/light e formatos 1:1, 4:5, 9:16 e 16:9. Mudar o formato reinicia a partida; alterações de cor são aplicadas na hora.
+
 ## Recursos
 
 - Zero dependências

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./dist/snake404.css">
   <link rel="stylesheet" href="./demo.css">
   <script src="./dist/snake404.js" defer></script>
+  <script src="./demo.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#game">Ir para o jogo</a>
@@ -22,7 +23,45 @@
         <span class="badge"><span aria-hidden="true">●</span> DEMO INTERATIVO</span>
         <p>Uma página perdida.<br>Uma partida encontrada.</p>
       </div>
-      <div id="game" data-snake404 data-snake404-options='{"labels":{"subtitle":"O caminho acabou. O jogo começa aqui."}}'></div>
+      <section class="customizer" aria-labelledby="customizer-title">
+        <h2 id="customizer-title">Do seu jeito</h2>
+        <div class="settings">
+          <label>Paleta
+            <select id="palette">
+              <option value="classic">Clássica</option>
+              <option value="ocean">Oceano</option>
+              <option value="sunset">Pôr do sol</option>
+              <option value="violet">Violeta</option>
+              <option value="custom">Personalizada</option>
+            </select>
+          </label>
+          <label>Formato do grid
+            <select id="ratio">
+              <option value="1:1">1 : 1 — Quadrado</option>
+              <option value="4:5">4 : 5 — Retrato</option>
+              <option value="9:16">9 : 16 — Vertical</option>
+              <option value="16:9" selected>16 : 9 — Paisagem</option>
+            </select>
+          </label>
+          <label>Aparência
+            <select id="mode">
+              <option value="dark">Dark — Escuro</option>
+              <option value="light">Light — Claro</option>
+            </select>
+          </label>
+        </div>
+        <fieldset class="colors">
+          <legend>Personalizar cores</legend>
+          <label><input type="color" id="color-background" value="#0b0d10">Fundo</label>
+          <label><input type="color" id="color-grid" value="#222830">Grid</label>
+          <label><input type="color" id="color-snake" value="#ffffff">Cobra</label>
+          <label><input type="color" id="color-snakeHead" value="#c7ff5e">Cabeça</label>
+          <label><input type="color" id="color-food" value="#ff5e7a">Comida</label>
+        </fieldset>
+        <p class="settings-hint">As cores mudam na hora. Alterar o formato reinicia a partida. Paletas prontas se adaptam ao modo claro ou escuro.</p>
+        <p id="settings-status" class="sr-only" role="status"></p>
+      </section>
+      <div id="game"></div>
       <p class="instructions">Setas ou WASD para mover <span aria-hidden="true">·</span> Espaço para pausar <span aria-hidden="true">·</span> No celular, deslize ou use os botões</p>
       <noscript><p class="notice">Ative o JavaScript no navegador para jogar Snake404.</p></noscript>
       <section class="about" aria-labelledby="about-title">

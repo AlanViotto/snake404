@@ -32,7 +32,7 @@ jobs:
       - name: Preparar site
         run: |
           mkdir -p _site/dist
-          cp demo/index.html demo/demo.css _site/
+          cp demo/index.html demo/demo.css demo/demo.js _site/
           cp dist/snake404.js dist/snake404.css _site/dist/
           touch _site/.nojekyll
       - name: Enviar artefato
