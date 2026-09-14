@@ -8,6 +8,8 @@ A lightweight, dependency-free Snake game made especially for **404 pages**, err
 
 **Created by [Alan Viotto](https://github.com/AlanViotto) | [Viotto & Co.](https://viotto.digital)**
 
+🎮 **[Jogue o demo](https://alanviotto.github.io/snake404/)**
+
 ## Recursos
 
 - Zero dependências
