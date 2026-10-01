@@ -1,5 +1,5 @@
 /*!
- * Snake404.js v1.0.1
+ * Snake404.js v1.0.2
  * MIT License
  */
 (function (global, factory) {
@@ -10,6 +10,99 @@
   }
 })(typeof window !== "undefined" ? window : globalThis, function () {
   "use strict";
+const LOCALES = {
+  en: {
+    title: "404",
+    subtitle: "Page not found. At least Snake is here.",
+    start: "Play",
+    restart: "Play again",
+    score: "Score",
+    best: "Best",
+    hint: "Use arrow keys/WASD or swipe the screen.",
+    paused: "Paused",
+    gameOver: "Game over",
+    continue: "Continue",
+    canvasLabel: "Snake game",
+    up: "Up",
+    down: "Down",
+    left: "Left",
+    right: "Right"
+  },
+  pt: {
+    title: "404",
+    subtitle: "Página não encontrada. Pelo menos o Snake está aqui.",
+    start: "Jogar",
+    restart: "Jogar novamente",
+    score: "Pontos",
+    best: "Recorde",
+    hint: "Use as setas/WASD ou deslize na tela.",
+    paused: "Pausado",
+    gameOver: "Fim de jogo",
+    continue: "Continuar",
+    canvasLabel: "Jogo Snake",
+    up: "Cima",
+    down: "Baixo",
+    left: "Esquerda",
+    right: "Direita"
+  },
+  es: {
+    title: "404",
+    subtitle: "Página no encontrada. Al menos Snake está aquí.",
+    start: "Jugar",
+    restart: "Jugar de nuevo",
+    score: "Puntos",
+    best: "Récord",
+    hint: "Usa las flechas/WASD o desliza en la pantalla.",
+    paused: "Pausado",
+    gameOver: "Fin del juego",
+    continue: "Continuar",
+    canvasLabel: "Juego Snake",
+    up: "Arriba",
+    down: "Abajo",
+    left: "Izquierda",
+    right: "Derecha"
+  },
+  fr: {
+    title: "404",
+    subtitle: "Page introuvable. Au moins, Snake est là.",
+    start: "Jouer",
+    restart: "Rejouer",
+    score: "Score",
+    best: "Record",
+    hint: "Utilisez les flèches/WASD ou balayez l’écran.",
+    paused: "En pause",
+    gameOver: "Partie terminée",
+    continue: "Continuer",
+    canvasLabel: "Jeu Snake",
+    up: "Haut",
+    down: "Bas",
+    left: "Gauche",
+    right: "Droite"
+  },
+  it: {
+    title: "404",
+    subtitle: "Pagina non trovata. Almeno Snake è qui.",
+    start: "Gioca",
+    restart: "Gioca di nuovo",
+    score: "Punti",
+    best: "Record",
+    hint: "Usa le frecce/WASD o scorri sullo schermo.",
+    paused: "In pausa",
+    gameOver: "Game over",
+    continue: "Continua",
+    canvasLabel: "Gioco Snake",
+    up: "Su",
+    down: "Giù",
+    left: "Sinistra",
+    right: "Destra"
+  }
+};
+
+function normalizeLocale(locale) {
+  const code = String(locale || "en").toLowerCase().split("-")[0];
+  return Object.prototype.hasOwnProperty.call(LOCALES, code) ? code : "en";
+}
+
 const DEFAULTS = {
   cellSize: 20,
   speed: 110,
@@ -21,6 +114,7 @@ const DEFAULTS = {
   showScore: true,
   showControls: true,
   autoStart: false,
+  locale: "en",
   theme: {
     background: "#0b0d10",
     grid: "rgba(255,255,255,.045)",
@@ -28,18 +122,7 @@ const DEFAULTS = {
     snakeHead: "#c7ff5e",
     food: "#ff5e7a"
   },
-  labels: {
-    title: "404",
-    subtitle: "Página não encontrada. Pelo menos o Snake está aqui.",
-    start: "Jogar",
-    restart: "Jogar novamente",
-    score: "Pontos",
-    best: "Recorde",
-    hint: "Use as setas/WASD ou deslize na tela.",
-    paused: "Pausado",
-    gameOver: "Fim de jogo",
-    continue: "Continuar"
-  },
+  labels: { ...LOCALES.en },
   onStart: null,
   onScore: null,
   onGameOver: null
@@ -83,6 +166,10 @@ class SnakeGame {
     if (!this.root) throw new Error("Snake404: target element not found.");
 
     this.options = merge(DEFAULTS, options);
+    this.locale = normalizeLocale(this.options.locale);
+    this.options.locale = this.locale;
+    this.options.customLabels = options.labels || {};
+    this.options.labels = merge(LOCALES[this.locale], this.options.customLabels);
     this.storageKey = "snake404-best";
     this.best = this.readBest();
     this.running = false;
@@ -133,7 +220,7 @@ class SnakeGame {
         </div>
 
         <div class="snake404__stage">
-          <canvas class="snake404__canvas" aria-label="Snake game"></canvas>
+          <canvas class="snake404__canvas" aria-label="${esc(this.options.labels.canvasLabel)}"></canvas>
           <div class="snake404__overlay" data-overlay>
             <div class="snake404__overlayCard">
               <strong class="snake404__overlayTitle" data-overlay-title>${esc(this.options.labels.title)}</strong>
@@ -144,11 +231,11 @@ class SnakeGame {
         </div>
 
         <div class="snake404__controls" ${this.options.showControls ? "" : "hidden"}>
-          <button type="button" data-dir="ArrowUp" aria-label="Cima">↑</button>
+          <button type="button" data-dir="ArrowUp" aria-label="${esc(this.options.labels.up)}">↑</button>
           <div>
-            <button type="button" data-dir="ArrowLeft" aria-label="Esquerda">←</button>
-            <button type="button" data-dir="ArrowDown" aria-label="Baixo">↓</button>
-            <button type="button" data-dir="ArrowRight" aria-label="Direita">→</button>
+            <button type="button" data-dir="ArrowLeft" aria-label="${esc(this.options.labels.left)}">←</button>
+            <button type="button" data-dir="ArrowDown" aria-label="${esc(this.options.labels.down)}">↓</button>
+            <button type="button" data-dir="ArrowRight" aria-label="${esc(this.options.labels.right)}">→</button>
           </div>
         </div>
       </div>
@@ -542,6 +629,7 @@ function autoInit() {
   });
 }
 
+
 if (typeof document !== "undefined") {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", autoInit);
@@ -550,6 +638,6 @@ if (typeof document !== "undefined") {
   }
 }
 
-return { version: "1.0.1", Game: SnakeGame, defaults: DEFAULTS, init, autoInit };
+return { version: "1.0.2", Game: SnakeGame, defaults: DEFAULTS, locales: LOCALES, init, autoInit };
 
 });
