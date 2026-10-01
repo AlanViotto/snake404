@@ -25,6 +25,7 @@ Try the Classic, Ocean, Sunset and Violet palettes in the demo, or customize the
 - Touch/swipe
 - Mobile controls
 - High score in `localStorage`
+- Classic edge wrapping by default
 - Pause on window blur
 - Customizable themes and labels
 - Built-in localization: English, Portuguese, Spanish, French and Italian
@@ -267,7 +268,7 @@ game.destroy();
 | `speedStep` | `2` | Movement interval reduction per point in milliseconds |
 | `initialLength` | `4` | Initial snake length |
 | `pauseOnBlur` | `true` | Pause when switching windows |
-| `wrap` | `false` | Allow wrapping through walls |
+| `wrap` | `true` | Continue through one edge and reappear on the opposite edge |
 | `showScore` | `true` | Show the score |
 | `showControls` | `true` | Show mobile controls |
 | `autoStart` | `false` | Start automatically |
