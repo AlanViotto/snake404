@@ -6,6 +6,8 @@ export type Snake404Theme = {
   food?: string;
 };
 
+export type Snake404Locale = "en" | "pt" | "es" | "fr" | "it";
+
 export type Snake404Labels = {
   title?: string;
   subtitle?: string;
@@ -17,6 +19,11 @@ export type Snake404Labels = {
   paused?: string;
   gameOver?: string;
   continue?: string;
+  canvasLabel?: string;
+  up?: string;
+  down?: string;
+  left?: string;
+  right?: string;
 };
 
 export type Snake404Options = {
@@ -30,6 +37,7 @@ export type Snake404Options = {
   showScore?: boolean;
   showControls?: boolean;
   autoStart?: boolean;
+  locale?: Snake404Locale;
   theme?: Snake404Theme;
   labels?: Snake404Labels;
   onStart?: (game: SnakeGame) => void;
@@ -50,6 +58,8 @@ export class SnakeGame {
   destroy(): void;
 }
 
+export const locales: Record<Snake404Locale, Required<Snake404Labels>>;
+
 export function init(target: string | HTMLElement, options?: Snake404Options): SnakeGame;
 export function autoInit(): void;
 
@@ -57,6 +67,7 @@ declare const Snake404: {
   version: string;
   Game: typeof SnakeGame;
   defaults: object;
+  locales: typeof locales;
   init: typeof init;
   autoInit: typeof autoInit;
 };
