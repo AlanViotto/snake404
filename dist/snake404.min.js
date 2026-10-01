@@ -1,5 +1,5 @@
 /*!
- * Snake404.js v1.0.2
+ * Snake404.js v1.0.3
  * MIT License
  */
 (function (global, factory) {
@@ -110,7 +110,7 @@ const DEFAULTS = {
   speedStep: 2,
   initialLength: 4,
   pauseOnBlur: true,
-  wrap: false,
+  wrap: true,
   showScore: true,
   showControls: true,
   autoStart: false,
@@ -638,6 +638,6 @@ if (typeof document !== "undefined") {
   }
 }
 
-return { version: "1.0.2", Game: SnakeGame, defaults: DEFAULTS, locales: LOCALES, init, autoInit };
+return { version: "1.0.3", Game: SnakeGame, defaults: DEFAULTS, locales: LOCALES, init, autoInit };
 
 });
