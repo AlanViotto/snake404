@@ -1,86 +1,97 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#07090b">
-  <meta name="description" content="Uma página perdida, uma partida encontrada. Experimente Snake404.js: um jogo Snake leve, personalizável e sem dependências para páginas 404.">
-  <title>Snake404.js — Jogue o demo</title>
+  <meta name="description" content="A lost page, a game found. Try Snake404.js: a lightweight, customizable, dependency-free Snake game for 404 pages.">
+  <title>Snake404.js — Play the demo</title>
   <link rel="stylesheet" href="./dist/snake404.css">
   <link rel="stylesheet" href="./demo.css">
   <script src="./dist/snake404.js" defer></script>
   <script src="./demo.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#game">Ir para o jogo</a>
+  <a class="skip-link" href="#game">Skip to game</a>
   <div class="page">
     <header class="header">
-      <a class="brand" href="./" aria-label="Snake404.js — início">snake<span>404</span><small>.js</small></a>
-      <a class="repo-link" href="https://github.com/AlanViotto/snake404">Ver no GitHub <span aria-hidden="true">↗</span></a>
+      <a class="brand" href="./" aria-label="Snake404.js — home">snake<span>404</span><small>.js</small></a>
+      <a class="repo-link" href="https://github.com/AlanViotto/snake404">View on GitHub <span aria-hidden="true">↗</span></a>
     </header>
     <main>
       <div class="intro">
-        <span class="badge"><span aria-hidden="true">●</span> DEMO INTERATIVO</span>
-        <p>Uma página perdida.<br>Uma partida encontrada.</p>
+        <span class="badge"><span aria-hidden="true">●</span> INTERACTIVE DEMO</span>
+        <p>A lost page.<br>A game found.</p>
       </div>
       <section class="customizer" aria-labelledby="customizer-title">
-        <h2 id="customizer-title">Do seu jeito</h2>
+        <h2 id="customizer-title">Make it yours</h2>
         <div class="settings">
-          <label>Paleta
+          <label>Palette
             <select id="palette">
-              <option value="classic">Clássica</option>
-              <option value="ocean">Oceano</option>
-              <option value="sunset">Pôr do sol</option>
-              <option value="violet">Violeta</option>
-              <option value="custom">Personalizada</option>
+              <option value="classic">Classic</option>
+              <option value="ocean">Ocean</option>
+              <option value="sunset">Sunset</option>
+              <option value="violet">Violet</option>
+              <option value="custom">Custom</option>
             </select>
           </label>
-          <label>Formato do grid
+          <label>Board ratio
             <select id="ratio">
-              <option value="1:1">1 : 1 — Quadrado</option>
-              <option value="4:5">4 : 5 — Retrato</option>
+              <option value="1:1">1 : 1 — Square</option>
+              <option value="4:5">4 : 5 — Portrait</option>
               <option value="9:16">9 : 16 — Vertical</option>
-              <option value="16:9" selected>16 : 9 — Paisagem</option>
+              <option value="16:9" selected>16 : 9 — Landscape</option>
             </select>
           </label>
-          <label>Aparência
+          <label>Appearance
             <select id="mode">
-              <option value="dark">Dark — Escuro</option>
-              <option value="light">Light — Claro</option>
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+        </div>
+        <div class="settings">
+          <label>Game language
+            <select id="locale">
+              <option value="en" selected>English</option>
+              <option value="pt">Português</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="it">Italiano</option>
             </select>
           </label>
         </div>
         <fieldset class="colors">
-          <legend>Personalizar cores</legend>
-          <label><input type="color" id="color-background" value="#0b0d10">Fundo</label>
+          <legend>Customize colors</legend>
+          <label><input type="color" id="color-background" value="#0b0d10">Background</label>
           <label><input type="color" id="color-grid" value="#222830">Grid</label>
-          <label><input type="color" id="color-snake" value="#ffffff">Cobra</label>
-          <label><input type="color" id="color-snakeHead" value="#c7ff5e">Cabeça</label>
-          <label><input type="color" id="color-food" value="#ff5e7a">Comida</label>
+          <label><input type="color" id="color-snake" value="#ffffff">Snake</label>
+          <label><input type="color" id="color-snakeHead" value="#c7ff5e">Head</label>
+          <label><input type="color" id="color-food" value="#ff5e7a">Food</label>
         </fieldset>
-        <p class="settings-hint">As cores mudam na hora. Alterar o formato reinicia a partida. Paletas prontas se adaptam ao modo claro ou escuro.</p>
+        <p class="settings-hint">As cores mudam na hora. Alterar o formato reinicia a partida. Palettes prontas se adaptam ao modo claro ou escuro.</p>
         <p id="settings-status" class="sr-only" role="status"></p>
       </section>
       <div id="game"></div>
-      <p class="instructions">Setas ou WASD para mover <span aria-hidden="true">·</span> Espaço para pausar <span aria-hidden="true">·</span> No celular, deslize ou use os botões</p>
-      <noscript><p class="notice">Ative o JavaScript no navegador para jogar Snake404.</p></noscript>
+      <p class="instructions">Arrow keys or WASD to move <span aria-hidden="true">·</span> Space to pause <span aria-hidden="true">·</span> On mobile, swipe or use the buttons</p>
+      <noscript><p class="notice">Enable JavaScript in your browser to play Snake404.</p></noscript>
       <section class="about" aria-labelledby="about-title">
         <div>
-          <h2 id="about-title">Dê uma segunda chance à sua 404.</h2>
-          <p>Um pequeno jogo para transformar um caminho errado em uma boa pausa. Feito com JavaScript e Canvas, pronto para o seu próximo projeto.</p>
+          <h2 id="about-title">Give your 404 a second chance.</h2>
+          <p>A tiny game that turns a wrong turn into a playful break. Lightweight, customizable, and ready for your next project.</p>
         </div>
-        <ul class="features" aria-label="Recursos">
-          <li>Zero dependências</li>
-          <li>Teclado & touch</li>
-          <li>100% personalizável</li>
-          <li>Licença MIT</li>
+        <ul class="features" aria-label="Features">
+          <li>Zero dependencies</li>
+          <li>Keyboard & touch</li>
+          <li>100% customizable</li>
+          <li>MIT License</li>
         </ul>
-        <a class="docs-link" href="https://github.com/AlanViotto/snake404#plain-html">Adicionar ao meu projeto <span aria-hidden="true">↗</span></a>
+        <a class="docs-link" href="https://github.com/AlanViotto/snake404#plain-html">Add to my project <span aria-hidden="true">↗</span></a>
       </section>
     </main>
     <footer>
-      <span>Criado por <a href="http://linkedin.com/in/AlanViotto">Alan Viotto</a> | <a href="https://viotto.digital">Viotto & Co.</a></span>
-      <span>Snake404.js <span class="version">v1.0.1</span></span>
+      <span>Created by <a href="http://linkedin.com/in/AlanViotto">Alan Viotto</a> | <a href="https://viotto.digital">Viotto & Co.</a></span>
+      <span>Snake404.js <span class="version">v1.0.2</span></span>
     </footer>
   </div>
 </body>
