@@ -98,7 +98,7 @@ const DEFAULTS = {
   speedStep: 2,
   initialLength: 4,
   pauseOnBlur: true,
-  wrap: false,
+  wrap: true,
   showScore: true,
   showControls: true,
   autoStart: false,
@@ -626,4 +626,4 @@ if (typeof document !== "undefined") {
 }
 
 export { SnakeGame, DEFAULTS as defaults, LOCALES as locales, init, autoInit };
-export default { version: "1.0.2", Game: SnakeGame, defaults: DEFAULTS, locales: LOCALES, init, autoInit };
+export default { version: "1.0.3", Game: SnakeGame, defaults: DEFAULTS, locales: LOCALES, init, autoInit };
