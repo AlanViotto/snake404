@@ -27,6 +27,7 @@ Try the Classic, Ocean, Sunset and Violet palettes in the demo, or customize the
 - High score in `localStorage`
 - Pause on window blur
 - Customizable themes and labels
+- Built-in localization: English, Portuguese, Spanish, French and Italian
 - Events/callbacks for analytics
 - Programmatic API
 - Automatic initialization via `data-snake404`
@@ -201,6 +202,35 @@ Snake404.init("#snake404", {
   },
   onGameOver(score) {
     console.log("Game over:", score);
+  }
+});
+```
+
+## Localization
+
+Snake404 includes built-in interface translations for English, Portuguese, Spanish, French and Italian. English is the default and fallback locale.
+
+```js
+Snake404.init("#snake404", {
+  locale: "pt"
+});
+```
+
+Supported locale codes:
+
+- `en` — English
+- `pt` — Portuguese
+- `es` — Spanish
+- `fr` — French
+- `it` — Italian
+
+You can still override any translated label while keeping the selected locale:
+
+```js
+Snake404.init("#snake404", {
+  locale: "fr",
+  labels: {
+    subtitle: "Cette page a disparu. Jouons !"
   }
 });
 ```
