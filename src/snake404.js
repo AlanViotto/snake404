@@ -178,18 +178,6 @@ class SnakeGame {
     if (this.options.autoStart) this.start();
   }
 
-  setLocale(locale) {
-    const next = normalizeLocale(locale);
-    const customLabels = this.options.customLabels || {};
-    this.locale = next;
-    this.options.locale = next;
-    this.options.labels = merge(LOCALES[next], customLabels);
-    this.mount();
-    this.resize();
-    this.reset();
-    return this;
-  }
-
   readBest() {
     try {
       return parseInt(localStorage.getItem(this.storageKey) || "0", 10);
