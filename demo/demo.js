@@ -14,6 +14,7 @@
   const palette = document.querySelector("#palette");
   const mode = document.querySelector("#mode");
   const ratio = document.querySelector("#ratio");
+  const locale = document.querySelector("#locale");
   const colors = Object.fromEntries(["background", "grid", "snake", "snakeHead", "food"].map(key => [key, document.querySelector(`#color-${key}`)]));
   let game;
 
@@ -48,15 +49,17 @@
     if (game) game.destroy();
     game = Snake404.init(root, {
       theme: theme(),
-      labels: { subtitle: "O caminho acabou. O jogo começa aqui." }
+      locale: locale.value,
+      labels: locale.value === "en" ? { subtitle: "The path ends here. The game starts now." } : undefined
     });
   }
 
   palette.addEventListener("change", applyPalette);
   mode.addEventListener("change", applyMode);
+  locale.addEventListener("change", mount);
   ratio.addEventListener("change", () => {
     mount();
-    document.querySelector("#settings-status").textContent = `Formato ${ratio.value.replace(":", " por ")} aplicado. Partida reiniciada.`;
+    document.querySelector("#settings-status").textContent = `${ratio.value} board ratio applied. Game restarted.`;
   });
   for (const input of Object.values(colors)) {
     input.addEventListener("input", () => {
